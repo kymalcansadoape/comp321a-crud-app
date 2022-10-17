@@ -7,10 +7,12 @@ include "connection.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 
 <body>
+    <a class="new-btn" href="add.php">New Student</a>
     <table width="60%" border="1" cellspacing="0" align="center">
         <tr>
             <td>ID number</td>
@@ -35,17 +37,24 @@ include "connection.php";
                     <td> <?= $row['mi'] ?> </td>
                     <td> <?= $row['age'] ?> </td>
                     <td> <?= $row['course'] ?> </td>
-                    <td>Edit | 
-                        
-                    <a href="delete.php?idnum=<?php echo $row['student_id']?>">Delete</a>
+                    <td>
+                        <a href="edit.php?idnum=<?= $row['student_id'] ?>">Edit</a>  
+                    | 
+                        <a href="delete.php?idnum=<?= $row['student_id']?>">
+                    Delete                                                                                                                   
+                </a>
                 </td>
                 </tr>
         <?php }
         }
         else{
-            echo 'giatay';
+            ?>
+                    <tr>
+                        <td class="edit" colspan="7">No record to show</td>
+                    </tr>
+        <?php
         }
-        $connection->close();
+            $connection->close();
         ?>
     </table>
 </body>

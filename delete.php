@@ -2,7 +2,7 @@
 
 include "connection.php";
 $id = $_GET['idnum'];
-$sql = "DELETE FROM student_tbl WHERE student_id = '{$id}' ";
+$sql = "DELETE FROM students WHERE student_id='{$id}' ";
 
 if($connection->query($sql) === true){
     echo "Succes delete";
