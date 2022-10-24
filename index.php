@@ -1,5 +1,6 @@
 <?php
 include "connection.php";
+include "session.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,9 +11,20 @@ include "connection.php";
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
-
 <body>
     <a class="new-btn" href="add.php">New Student</a>
+    <a href="logout.php">Logout</a>
+
+    <form action="search-result.php" method="get">
+        <table>
+            <tr>
+                <td>Search:</td>
+                <td><input type="text" name="query" placeholder="Enter Name"></td>
+                <td><input type="submit" name="search" id="search" ></td>
+            </tr>
+        </table>
+    </form>
+
     <table width="60%" border="1" cellspacing="0" align="center">
         <tr>
             <td>ID number</td>

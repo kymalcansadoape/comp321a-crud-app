@@ -1,6 +1,7 @@
 <?php
 
 include "connection.php";
+include "session.php";
 $id = $_GET['idnum'];
 $sql = "DELETE FROM students WHERE student_id='{$id}' ";
 

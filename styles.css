@@ -35,11 +35,11 @@ td{
     background: #000;
     color: white;
 }
-input[type="text"], select{
+input[type="text"], input[type="password"], select{
     font-size: 1.2rem;
     padding: 8px 10px;
 }
-input[value="Save"]{
+input[value="Save"], input[name="update"]{
     border: 0;
     border-radius: 5px;
     font-size: 1rem;

@@ -1,5 +1,6 @@
 <?php
 include "connection.php";
+include "session.php";
 
 if(isset($_POST['add'])){
     $idNumber = $_POST['idnumber'];
@@ -11,7 +12,7 @@ if(isset($_POST['add'])){
     $sql = "INSERT INTO students(student_id, lastname, firstname, mi, age, course) VALUES('$idNumber', '$lastName', '$firstName', '$mi',' $age','$course')";
     if($connection->query($sql) === true){
         echo "New Student record was successfully saved.";
-        header('location: add.php');
+        header('location: index.php');
     }
     else{
         echo "Unable to save student record due to following error". $connection->connect_error;
@@ -19,7 +20,6 @@ if(isset($_POST['add'])){
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

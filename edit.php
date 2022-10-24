@@ -1,5 +1,6 @@
 <?php
     include "connection.php";
+    include "session.php";
 
     $queryId = $_GET['idnum'];
 
@@ -15,13 +16,13 @@
         $age = $_POST['age'];
         $course = $_POST['course'];
 
-        $sql = "UPDATE students SET lastname='{$lastName}', firstnane='{$firstname}', mi='{$mi}', age='$age', $course='$course' WHERE student_id='{$studentId}'";
+        $sql = "UPDATE students SET lastname='{$lastName}', firstname='{$firstname}', mi='{$mi}', age='$age', course='$course' WHERE student_id='{$studentId}'";
 
         if($connection->query($sql) === true){
             header('location: index.php');
         }
         else{
-            echo "wala ni uopda"
+            echo "wala ni uopda";
         }
     }
 ?>  
